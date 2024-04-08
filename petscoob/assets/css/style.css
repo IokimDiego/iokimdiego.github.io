@@ -1,0 +1,235 @@
+/* 1º: Inicia a estilização de fora pra dentro, ou seja, iniciar pela estilização que servirá para toda página */
+/*Removendo todas as formatações padrões HTML*/
+* {
+  box-sizing: border-box; /* Limpar margens e paddings dos elementos */
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif; /* Define a fonte Montserrat e caso o navegador não encontre a fonte, coloca uma fonte da família sem serifa */
+}
+body {
+  color: #263238;
+}
+
+/* 2º: Estilizando o Cabeçalho */
+
+header {
+  background: #e91e63;
+  display: flex;
+  justify-content: space-between; /* justify-content: alinha os itens horizontalmente */
+  align-items: center; /* align-items: alinha os itens verticalmente */
+  /* padding-left: 103px;
+  padding-right: 121px;
+  padding-top: 25px;
+  padding-bottom: 26px; */
+}
+header a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  /* padding: 0 32px; */
+}
+/* Ao passar o mouse mostra o sublinhado */
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* 3º: Estilizando a Seção Início */
+
+#inicio {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Insere espaço entre os elementos */
+  /* padding: 24px 80px 128px 80px; padding ou margin (sentido horário): top right bottom left */
+  padding-top: 24px;
+  /* padding-bottom: 128px; */
+  position: relative; /* atribui posicionamento relativo na seção pai, para então poder fixar um elemento filho em uma posição absoluta*/
+}
+
+/* 7º Colocando o background numa posição específica na <Section> Início */
+/* atribuir na section pai (sectio Inicio) valor de posição relativa */
+.absolute {
+  position: absolute; /* fixa o elemento filho numa posição fixa. Depende se a seção pai estiver em posição relativa */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -10; /* Define a profundidade, onde <0 o elemento vai para trás, >0 o elemento fica na frente dos demais */
+}
+
+.bg-inicio {
+  /* background: url("../img/bg_inicio.svg") no-repeat bottom; */
+  /* background-size: cover; ocupar todo o espaço */
+  background-color: #fcdde8;
+}
+
+/* 4º: Estilizando os títulos h1 e h2 */
+
+h1,
+h2 {
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+/* 5º: Criar uma classe para estilizar parágrafos */
+.paragrafo {
+  line-height: 150%; /* a altura normal é 100%, 150% equivale ao alinhamento de 1,5 do Word */
+  font-size: 16px;
+  margin-bottom: 32px;
+  text-align: justify; /* alinhamento justificado para o texto */
+}
+
+/* 6º Criar as classes de botão e estilizar */
+.botao {
+  background: #e91e63;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 16px 32px; /* informando apenas dois valores corresponde a: 1º valor: top e bottom, 2º valor: left e right */
+  border-radius: 8px;
+}
+.botao-transparente {
+  color: #e91e63;
+  background-color: transparent;
+  font-size: 16px;
+  text-underline-offset: 5px; /* define um espaço entre a palavra e o sublinhado */
+  font-weight: 600;
+  padding: 16px 32px;
+}
+
+/* 8º: Estilizando a Seção Clínica */
+
+#clinica {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding-top: 64px;
+
+}
+
+/* 9º: Estilizando a Lista */
+
+#clinica li {
+  margin-left: 32px;
+  margin-bottom: 16px;
+}
+
+/* 10º: Estilizando a Seção Farmácia e seus filhos */
+
+#farmacia {
+  padding: 64px;
+  text-align: center; /* centraliza texto */
+}
+#farmacia img {
+  margin: 10px auto; /* auto: centraliza a imagem (pega o espaço que sobra e divide por dois para centralizar) */
+}
+#farmacia .paragrafo {
+  margin: 0 auto;
+  max-width: 950px;
+}
+#farmacia h2 {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* 11º: Estilizando a Seção Dúvidas e seus filhos */
+
+#duvidas {
+  display: flex;
+  align-items: start;
+  gap: 64px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.duvidas {
+  position: relative;
+}
+.duvidas h3 {
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #e91e63;
+  border-radius: 8px;
+  padding: 24px 42px 24px 24px;
+  cursor: pointer;
+}
+.duvidas img {
+  position: absolute;
+  top: 32px;
+  right: 24px;
+  cursor: pointer;
+}
+.duvidas p {
+  border-right: thin solid #e91e63;
+  border-bottom: thin solid #e91e63;
+  border-left: thin solid #e91e63;
+  margin-top: -8px;
+  padding: 24px;
+  border-radius: 0 0 8px 8px;
+  /* Estilizações do parágrafo para interação com JavaScrit */
+  /* Fechando o parágrafo */
+  padding: 0 24px;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.2s;
+}
+/* Ativando o parágrafo */
+.duvidas.ativa p {
+  height: fit-content; /* Altura suficiente para que o conteúdo caiba */
+  opacity: 1;
+  padding: 24px;
+}
+
+/* 12º: Estilizando o Rodapé e seus filhos */
+
+footer {
+  background: rgba(233, 33, 99, 0.25);
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  padding: 64px 80px;
+}
+footer img,
+footer .titulo {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+/* Estilizando os links rápidos */
+footer nav a {
+  color: #263238;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 16px;
+}
+footer nav a:hover {
+  font-weight: 600;
+}
+/* Estilizando os links de contatos */
+footer p a {
+  color: #263238;
+  text-decoration: none;
+}
+footer p a:hover {
+  font-weight: 600;
+}
+footer p {
+  max-width: 350px;
+  margin-bottom: 16px;
+}
+
+/* 13º: Estilizando a Seção Desenvolvedor */
+
+.desenvolvedor {
+  background: #263238;
+  color: #fff;
+  padding: 24px;
+  text-align: center;
+}
+.desenvolvedor a {
+  color: #ff9a6c;
+  text-decoration: none;
+}
+.desenvolvedor a:hover {
+  text-decoration: underline;
+}
