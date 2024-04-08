@@ -117,18 +117,17 @@ h2 {
 /* 10º: Estilizando a Seção Farmácia e seus filhos */
 
 #farmacia {
-  padding: 64px;
+  padding-top: 64px;
   text-align: center; /* centraliza texto */
 }
 #farmacia img {
   margin: 10px auto; /* auto: centraliza a imagem (pega o espaço que sobra e divide por dois para centralizar) */
+  padding-bottom: 32px;
 }
 #farmacia .paragrafo {
   margin: 0 auto;
-  max-width: 950px;
 }
 #farmacia h2 {
-  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -187,9 +186,14 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 80px;
-  padding: 64px 80px;
+  padding-top: 64px;
+  padding-bottom: 32px;
+
 }
-footer img,
+footer img {
+  margin-bottom: 24px;
+}
+
 footer .titulo {
   display: block;
   font-weight: 600;
@@ -214,7 +218,6 @@ footer p a:hover {
   font-weight: 600;
 }
 footer p {
-  max-width: 350px;
   margin-bottom: 16px;
 }
 
